@@ -39,7 +39,7 @@ func main() {
 	config := cors.DefaultConfig()
 	config.AllowOrigins = []string{"*"}
 	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}
-	config.AllowHeaders = []string{"Origin", "Content-Type", "Authorization", "Accept"}
+	config.AllowHeaders = []string{"Origin", "Content-Type", "Authorization", "Accept", "X-Requested-With"}
 	config.ExposeHeaders = []string{"Content-Length"}
 	config.AllowCredentials = true
 	config.MaxAge = 12 * time.Hour
