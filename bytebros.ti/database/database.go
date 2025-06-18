@@ -14,14 +14,11 @@ import (
 var DB *sql.DB
 
 func InitDB() {
-	connStr := fmt.Sprintf(
-		"host=%s port=%s user=%s password=%s dbname=%s sslmode=require",
-		os.Getenv("DB_HOST"),
-		os.Getenv("DB_PORT"),
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASS"),
-		os.Getenv("DB_NAME"),
-	)
+	connStr := os.Getenv("DATABASE_URL=postgresql://postgres:gui010704@db.ufhdksbzbgoskvutbyhh.supabase.co:5432/postgres")
+
+	if connStr == "" {
+		log.Fatalf("DATABASE_URL não definida nas variáveis de ambiente do Render.")
+	}
 
 	var err error
 	DB, err = sql.Open("postgres", connStr)
