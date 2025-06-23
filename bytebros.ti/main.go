@@ -37,7 +37,7 @@ func main() {
 	router.RedirectTrailingSlash = false
 
 	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{"*"}
+	config.AllowOrigins = []string{"https://bytebros.netlify.app/"}
 	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}
 	config.AllowHeaders = []string{"Origin", "Content-Type", "Authorization", "Accept", "X-Requested-With"}
 	config.ExposeHeaders = []string{"Content-Length"}
